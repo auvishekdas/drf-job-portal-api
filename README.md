@@ -13,5 +13,13 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - Set up `.gitignore` and organized static/template folders.
 - Successfully ran the local development server and tested the base view.
 
+## 📝 Today's Progress (Day 02)
+- Updated the browser tab title to **"International Job Portal"** in the navigation template.
+- Implemented styled main text headings with **"International Job Portal"** in distinct colors (purple and black) within the UI.
+- Implemented Bootstrap grid system (`container`, `row`, `col-sm-4`) for a responsive layout.
+- Successfully integrated static images and Font Awesome social media icons (Twitter, Facebook, Instagram, LinkedIn) into the layout.
+- Tested and verified the updated frontend design locally on the development server.
+
+
 
 

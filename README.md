@@ -20,6 +20,14 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - Successfully integrated static images and Font Awesome social media icons (Twitter, Facebook, Instagram, LinkedIn) into the layout.
 - Tested and verified the updated frontend design locally on the development server.
 
+## 📝 Today's Progress (Day 03)
+- Navigation Bar Design & UI Customization
+- Designed and structured a responsive navigation bar (`navigation.html`) using Bootstrap 4.
+- Added essential menu links (Home, Jobs, User Login, Recruiter Login, Admin Login, Contact) in a single horizontal line.
+- Integrated Font Awesome icons for all navigation items to enhance UI aesthetics.
+- Applied custom CSS styling with `white-space: nowrap` and smooth hover effects (background color change, rounded corners, and bold text).
+
+
 
 
 

@@ -27,6 +27,14 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - Integrated Font Awesome icons for all navigation items to enhance UI aesthetics.
 - Applied custom CSS styling with `white-space: nowrap` and smooth hover effects (background color change, rounded corners, and bold text).
 
+## 📝 Today's Progress (Day 04)
+- Homepage Body Design & Placed Candidates Section
+- Designed and structured the homepage (`index.html`) extending the base layout and integrating the navigation component.
+- Added a full-width promotional banner image (`container-fluid`) at the top of the homepage.
+- Developed an "Our Placed Candidates" section utilizing Bootstrap grid system (`container`, `row`, `col-md-3`).
+- Styled candidate profile images into circular avatars using `border-radius: 50%` with absolute positioned caption overlays.
+- Tested and verified the updated frontend UI design locally on the development server.
+
 
 
 

@@ -1,0 +1,22 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'navigation.html' %}
+
+<marquee style="font-family: 'Monotype Corsiva' ; font-size: 25px ; color: darksalmon ; background-color: chocolate ; font-weight: bold ; margin-top: 1%;">
+    User Login
+</marquee>
+
+<form class="container mt-5" method = "Post"> 
+    {% csrf_token %}
+    <label><b>Email ID</b></label>
+    <input type="text" class="form-control" name="uname" placeholder="Enter Your Email ID">
+
+    <label><b>Password</b></label>
+    <input type="password" class="form-control" name="pwd" placeholder="Enter Your Password">
+
+    <input type="submit" class="btn btn-primary" style="margin-top:2% ; color: coral ; background-color: darkslategrey; height: 40px ; ">
+</form>
+
+{% endblock %}

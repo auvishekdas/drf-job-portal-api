@@ -35,6 +35,13 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - Styled candidate profile images into circular avatars using `border-radius: 50%` with absolute positioned caption overlays.
 - Tested and verified the updated frontend UI design locally on the development server.
 
+## 📝 Today's Progress (Day 05)
+- **Login Pages Creation:** Created separate HTML templates for Admin, Recruiter, and User logins.
+- **Navigation Integration:** Added smooth routing links for all login pages inside `navigation.html`.
+- **Views & URLs Configuration:** Configured respective view functions in `views.py` and mapped clean URL routes in `urls.py`.
+- **Security & Styling:** Implemented Django CSRF protection in forms and styled the UI components locally.
+- **Local Testing:** Verified all login interfaces successfully on the local development server.
+
 
 
 

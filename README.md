@@ -42,6 +42,14 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Security & Styling:** Implemented Django CSRF protection in forms and styled the UI components locally.
 - **Local Testing:** Verified all login interfaces successfully on the local development server.
 
+## 📝 Today's Progress (Day 06)
+- **Footer Component Creation:** Created a dedicated `footer.html` template file to maintain a clean and modular layout structure across the Django job portal project.
+- **Styling & Layout Structure:** Implemented a custom black background with 100% width and a fixed height, integrating responsive Bootstrap grid components (`container`, `row`, `col-md-4`).
+- **Contact Info & Icon Integration:** Added a "Contact Information" section featuring a stylized map marker icon (`fa-map-marker`) and custom inline CSS styling (`color: chartreuse; font-size: 18px;`).
+- **Template Inclusion:** Successfully rendered and integrated `footer.html` into the main `index.html` layout using Django's template inclusion tag (`{% include 'footer.html' %}`).
+- **Local Testing:** Verified the updated footer UI design and responsiveness locally on the development server to ensure visual accuracy.
+
+
 
 
 

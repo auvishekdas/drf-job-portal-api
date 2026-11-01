@@ -4,8 +4,27 @@
     <div class="row">
         <div class="col-md-4 mt-3">
             <h3 class="text-white"> Contact Information</h3>
-             <p style="color:chartreuse ; font-size : 18px"><i class="fa fa-map-marker text-danger"></i></p>
+             <p style="color:chartreuse ; font-size : 18px"><i class="fa fa-map-marker text-danger"></i> Sylhet, Bangladesh </p>
+             <p style="color:chartreuse ; font-size : 18px"><i class="fa fa-envelope text-danger"></i> auvishekdas46@gmail.com </p>
+             <p style="color:chartreuse ; font-size : 18px"><i class="fa fa-phone text-danger"></i> P: +88 01813009642 / +88 01779424647 </p> 
+             <p style="color:chartreuse ; font-size : 18px"><i class="fa fa-globe text-danger"></i> W: https://github.com/auvishekdas </p>
         </div>
+
+        <div class="col-md-4 mt-3">
+            <h3 class="text-white"> International Job Placement </h3>
+            <p style="color:chartreuse ; font-size : 18px"> The ultimate platform for recruiters to post jobs and candidates to land their dream career. </p>
+        </div>
+
+        <div class="col-md-4 mt-3">
+            <h3 class="text-white"> Newsletter </h3>
+            <p style="color:chartreuse ; font-size : 18px"> Get updates, report issues, or request info-please give us your email ID. </p>
+            <form method="post" class="form-inline">
+             {% csrf_token %}
+                <input type="email" name="emailid" placeholder="Email ID" required class="form-control mr-2">
+                <input type="submit" value="Send" class="btn btn-primary"
+            </form>
+        </div>
+        
 
     </div>
 

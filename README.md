@@ -59,6 +59,13 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Superuser Account Creation:** Created a secure superuser account (`python manage.py createsuperuser`) with designated username and credentials for administrative access.
 - **Admin Dashboard Authentication & Testing:** Successfully logged into the Django administration panel (`/admin/`) using the superuser credentials and verified the authentication and user management interface (`Groups` and `Users`) on the local development server (`localhost:8000`).
 
+## 📝 Today's Progress (Day 09)
+- **Candidate User Model Creation (`models.py`):** Developed the `CandidateUser` model linked with Django's built-in `User` model via a ForeignKey, adding essential fields including `mobile`, `image`, `gender`, and `type` with a string representation (`__str__`).
+- **Admin Panel Registration (`admin.py`):** Registered the `CandidateUser` model successfully within the Django administration module to manage candidate data seamlessly.
+- **Admin Dashboard Testing & Verification:** Verified the updated database models on the local development server (`localhost:8000/admin/`), ensuring the `Candidate users` section and input forms render and function correctly.
+
+
+
 
 
 

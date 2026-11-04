@@ -64,6 +64,11 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Admin Panel Registration (`admin.py`):** Registered the `CandidateUser` model successfully within the Django administration module to manage candidate data seamlessly.
 - **Admin Dashboard Testing & Verification:** Verified the updated database models on the local development server (`localhost:8000/admin/`), ensuring the `Candidate users` section and input forms render and function correctly.
 
+## 📝 Today's Progress (Day 10)
+- **User Login UI Enhancement (`user_login.html`):** Added a "Create an account" button alongside the login form, linking it dynamically to the signup route using Django template tags (`{% url 'user_signup' %}`).
+- **User Signup Page Integration & Routing (`views.py` & `urls.py`):** Configured the `user_signup` view function and established the respective URL routing path to seamlessly transition from the login page to the signup interface.
+- **Interactive Signup Form Design (`user_signup.html`):** Developed a responsive signup template with navigation, custom marquee styling, and bootstrap grid input fields for "First Name" and "Last Name", successfully enabling users to navigate from login and access the complete signup view on the local server (`localhost:8000/user_signup`).
+
 
 
 

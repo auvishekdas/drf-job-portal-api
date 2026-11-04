@@ -13,3 +13,6 @@ def user_login(request):
 
 def recruiter_login(request):
     return render(request,'recruiter_login.html')
+
+def user_signup(request):
+    return render(request, 'user_signup.html')

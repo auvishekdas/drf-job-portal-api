@@ -24,5 +24,6 @@ urlpatterns = [
     path('admin_login', admin_login, name = "admin_login"),
     path('user_login', user_login, name = "user_login"),
     path('recruiter_login', recruiter_login, name = "recruiter_login"),
+    path('user_signup', user_signup, name = "user_signup"),
 
 ]  

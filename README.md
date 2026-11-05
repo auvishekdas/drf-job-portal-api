@@ -69,6 +69,10 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **User Signup Page Integration & Routing (`views.py` & `urls.py`):** Configured the `user_signup` view function and established the respective URL routing path to seamlessly transition from the login page to the signup interface.
 - **Interactive Signup Form Design (`user_signup.html`):** Developed a responsive signup template with navigation, custom marquee styling, and bootstrap grid input fields for "First Name" and "Last Name", successfully enabling users to navigate from login and access the complete signup view on the local server (`localhost:8000/user_signup`).
 
+## 📝 Today's Progress (Day 11)
+- **Comprehensive Signup Form Expansion (`user_signup.html`):** Enhanced the registration template by adding dedicated input fields for Contact Number, Email Address, Password, and Confirm Password within a structured bootstrap grid layout.
+- **Interactive Gender & File Upload Fields (`user_signup.html`):** Implemented custom inline radio buttons for gender selection (Male/Female) with styled borders and integrated a file upload field for profile images (`enctype="multipart/form-data"`).
+- **UI Layout & Form Alignment Fixed:** Refined the HTML structural tags, resolving overlapping issues and ensuring a clean, responsive, and professional user interface presentation on the local development server (`localhost:8000/user_signup`).
 
 
 

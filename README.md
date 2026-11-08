@@ -74,6 +74,13 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Interactive Gender & File Upload Fields (`user_signup.html`):** Implemented custom inline radio buttons for gender selection (Male/Female) with styled borders and integrated a file upload field for profile images (`enctype="multipart/form-data"`).
 - **UI Layout & Form Alignment Fixed:** Refined the HTML structural tags, resolving overlapping issues and ensuring a clean, responsive, and professional user interface presentation on the local development server (`localhost:8000/user_signup`).
 
+## 📝 Today's Progress (Day 12)
+- **Mandatory Field Validation (`required`):** Implemented the `required` attribute across all essential signup form input fields to ensure users cannot submit empty values.
+- **Client-Side Password Matching (JavaScript):** Integrated a custom JavaScript validation function (`checkpass()`) to verify that the Password and Confirm Password fields match prior to form submission, triggering an alert and focusing on the confirm field upon a mismatch.
+- **Contact Number Input Optimization (`type="tel"`):** Configured the contact number field with `type="tel"` to trigger optimal numeric keypads on mobile devices and refined form interactivity.
+- **Local Server Testing & Verification:** Successfully tested and verified the signup form layout, inline JavaScript validation alerts, and input functionalities on the local development server (`localhost:8000/user_signup`).
+
+
 
 
 

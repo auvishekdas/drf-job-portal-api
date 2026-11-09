@@ -80,6 +80,12 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Contact Number Input Optimization (`type="tel"`):** Configured the contact number field with `type="tel"` to trigger optimal numeric keypads on mobile devices and refined form interactivity.
 - **Local Server Testing & Verification:** Successfully tested and verified the signup form layout, inline JavaScript validation alerts, and input functionalities on the local development server (`localhost:8000/user_signup`).
 
+## 📝 Today's Progress (Day 13)
+- **OS Module Import (`settings.py`):** Imported the built-in Python `os` module at the top of the settings file to manage directory paths dynamically.
+- **Media Settings Configuration (`settings.py`):** Configured `MEDIA_URL = '/media/'` and `MEDIA_ROOT = os.path.join(BASE_DIR, 'media')` to properly store and handle uploaded user files and profile images.
+- **Media URL Routing (`urls.py`):** Imported `settings` and `static` utility functions, and extended `urlpatterns` with `+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)` to serve media files during development.
+- **Local Server Testing & Verification:** Successfully tested and verified the backend settings and media handling configuration on the local development server.
+
 
 
 

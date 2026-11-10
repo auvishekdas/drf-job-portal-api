@@ -86,6 +86,14 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Media URL Routing (`urls.py`):** Imported `settings` and `static` utility functions, and extended `urlpatterns` with `+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)` to serve media files during development.
 - **Local Server Testing & Verification:** Successfully tested and verified the backend settings and media handling configuration on the local development server.
 
+## 📝 Today's Progress (Day 14)
+- **User Signup Workflow Completion:** Successfully implemented and debugged the complete user registration workflow from frontend to backend.
+- **Form Data & File Handling (`views.py`):** Handled `POST` requests and profile image uploads securely using `request.POST.get()` and `request.FILES`, resolving `MultiValueDictKeyError` issues.
+- **Database Object Creation:** Integrated Django's built-in `User.objects.create_user()` with custom candidate creation logic to store user credentials and files safely.
+- **Template Modernization (`user_signup.html`):** Updated legacy `ifequal` tags to modern Django `if` conditional tags and added `enctype="multipart/form-data"` to the form.
+- **JavaScript Alerts & Redirection:** Configured popup success notifications (`alert("Signup Successful")`) and automated redirection to the login page (`user_login`).
+- **End-to-End Testing & Verification:** Successfully tested, debugged, and verified the entire user signup process on the local development server (`localhost:8000/user_signup`).
+
 
 
 

@@ -94,6 +94,14 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **JavaScript Alerts & Redirection:** Configured popup success notifications (`alert("Signup Successful")`) and automated redirection to the login page (`user_login`).
 - **End-to-End Testing & Verification:** Successfully tested, debugged, and verified the entire user signup process on the local development server (`localhost:8000/user_signup`).
 
+## 📝 Today's Progress (Day 15)
+- **User Login Authentication (`views.py`):** Successfully implemented the `user_login_request` view using Django's built-in `authenticate()` and `login()` functions to verify user credentials securely.
+- **Candidate User Verification & Exception Handling:** Integrated `try-except` blocks and `Candidateuser` model queries to ensure that only registered candidates can log in, handling invalid inputs gracefully.
+- **Secure Dashboard Access (`user_home`):** Created the `user_home` view and protected it with `request.user.is_authenticated` to prevent unauthorized direct URL access.
+- **Dynamic JavaScript Alerts & Redirection (`user_login.html`):** Configured conditional template tags (`{% if error %}`) to trigger browser alert notifications (`Login Successful` or `Invalid Login Credentials`) and automated redirection using `window.location`.
+- **URL Routing & Template Setup:** Added the `user_home` path in `urls.py` and structured the `user_home.html` template extending navigation bars and static blocks.
+- **Local Server Testing & Verification:** Successfully tested and verified the complete login flow and secure redirection on the local development server (`localhost:8000/user_login`).
+
 
 
 

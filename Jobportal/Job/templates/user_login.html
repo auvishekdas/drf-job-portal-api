@@ -11,7 +11,7 @@
 <form class="container mt-5" method = "Post" > 
     {% csrf_token %}
     <label><b>Email ID</b></label>
-    <input type="text" class="form-control" name="uname" placeholder="Enter Your Email ID">
+    <input type="email" class="form-control" name="uname" placeholder="Enter Your Email ID">
 
     <label><b>Password</b></label>
     <input type="password" class="form-control" name="pwd" placeholder="Enter Your Password">
@@ -19,4 +19,19 @@
 <a href="{% url 'user_signup' %}" class="btn btn-pripxstyle" style="margin-top:2% ; color: coral ; background-color: darkslategrey; height: 40px ">Create an account</a>    
 </form>
 {% include 'footer.html' %}
+
+{% if error == "no" %}
+<script>
+    alert("Login Successful");
+    window.location = '{% url "user_home" %}'
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Invalid Login Credentials, Please Try Again");
+</script>
+{% endif %}
+
+
 {% endblock %}

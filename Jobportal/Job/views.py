@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from .models import *
 from django.contrib.auth.models import User
-from django.contrib.auth import authenticate,login
+from django.contrib.auth import authenticate,login,logout
 
 # Create your views here.
 
@@ -39,6 +39,10 @@ def user_home(request):
     if not request.user.is_authenticated:
         return redirect('user_login')
     return render(request,'user_home.html')
+
+def Logout(request):
+    logout(request)
+    return redirect('index')
 
 
 def user_signup(request):

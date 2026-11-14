@@ -35,6 +35,26 @@ def user_login(request):
 def recruiter_login(request):
     return render(request,'recruiter_login.html')
 
+def recruiter_signup(request):
+    error = ""
+    if request.method=='POST':
+        f = request.POST.get('fname')
+        l = request.POST.get('lname')
+        i = request.FILES.get('img')
+        p = request.POST.get('pwd')
+        e = request.POST.get('email')
+        c = request.POST.get('contact')
+        g = request.POST.get('gender')
+        c = request.POST.get('company')
+        try:
+            user = User.objects.create_user(first_name=f, last_name=l,username=e,password=p)
+            RecruiterUser.objects.create(user=user,mobile=c,image=i,gender=g,company=c, type="recruiter",status="pending")
+            error="no"
+        except:
+            error="yes"
+    d = {'error':error}   
+    return render(request,'recruiter_signup.html')
+
 def user_home(request):
     if not request.user.is_authenticated:
         return redirect('user_login')

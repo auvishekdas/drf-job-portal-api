@@ -109,6 +109,14 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **URL Routing Configuration (`urls.py`):** Configured the dedicated URL path for the logout feature (`path('logout/', logout_request, name='logout')`).
 - **Session Flow & Dashboard Verification:** Verified the complete authentication cycle where successful login directs users to the protected `user_home` dashboard displaying all features (Home, Job List, Change Password, and Logout), and clicking logout safely terminates the session, redirecting back to the local server's public home page output (`localhost:8000`).
 
+## 📝 Today's Progress (Day 17)
+- **Recruiter Signup Template (`recruiter_signup.html`):** Created the recruiter registration page by adapting the user signup layout with `{% load static %}`, `{% block body %}`, `{% include 'navigation.html' %}`, and `{% include 'footer.html' %}`, along with a marquee header (`Recruiter Signup`), CSRF token, form fields (`First Name`, `Last Name`, `Contact Number`, `Company`, `Email Address`, `Password`, `Confirm Password`, `Gender`, `Image`), and submit button.
+- **Client-Side Validation & Alert Handling (`recruiter_signup.html`):** Added JavaScript password matching validation (`document.signup.password` check returning `false` on mismatch or `true` on match) and conditional template alerts (`error == "no"` showing `Signup Successful` with redirect to user login, and `error == "yes"` showing `Something went wrong, please try again`).
+- **Recruiter Login Link Integration (`recruiter_login.html`):** Updated the recruiter login page with `{% url 'recruiter_signup' %}` so recruiters can navigate directly to the signup page from the login screen.
+- **Recruiter Model Definition (`models.py`):** Defined the `Recruiter` model inheriting from `models.Model` with fields for `user`, `mobile`, `image`, `gender`, `company`, `type`, and `status`.
+- **Recruiter Signup View (`views.py`):** Implemented the `recruiter_signup` view handling `POST` requests to extract form data (`f_name`, `l_name`, `password`, `email`, `contact`, `gender`, `company`) and uploaded files (`request.FILES.get('image')`), creating the Django `User` and `Recruiter` records inside a `try-except` block and rendering `recruiter_signup.html`.
+- **URL Routing & Local Verification (`urls.py`):** Configured `path('recruiter_signup/', views.recruiter_signup, name='recruiter_signup')` and verified the rendered `localhost:8000/recruiter_login` and `localhost:8000/recruiter_signup` pages on the local development server.
+
 
 
 

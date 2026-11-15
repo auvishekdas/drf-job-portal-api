@@ -33,7 +33,25 @@ def user_login(request):
     return render(request,'user_login.html',d)
 
 def recruiter_login(request):
-    return render(request,'recruiter_login.html')
+    error=""
+    if request.method == "POST":
+        u = request.POST['uname'];
+        p = request.POST['pwd'];
+        user = authenticate(username=u,password=p)
+        if user:
+            try:
+                user1 = RecruiterUser.objects.get(user=user)
+                if user1.type == "recruiter" and user1.status!="pending":
+                    login(request,user)
+                    error="no" 
+                else:
+                    error="not"
+            except:
+                    error="yes"
+        else:
+            error="yes"
+    d = {'error':error}    
+    return render(request,'recruiter_login.html' ,d)
 
 def recruiter_signup(request):
     error = ""
@@ -53,13 +71,17 @@ def recruiter_signup(request):
         except:
             error="yes"
     d = {'error':error}   
-    return render(request,'recruiter_signup.html')
+    return render(request,'recruiter_signup.html',d)
 
 def user_home(request):
     if not request.user.is_authenticated:
         return redirect('user_login')
     return render(request,'user_home.html')
 
+def recruiter_home(request):
+    if not request.user.is_authenticated:
+        return redirect('recruiter_login')
+    return render(request,'recruiter_home.html')
 def Logout(request):
     logout(request)
     return redirect('index')

@@ -117,6 +117,13 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Recruiter Signup View (`views.py`):** Implemented the `recruiter_signup` view handling `POST` requests to extract form data (`f_name`, `l_name`, `password`, `email`, `contact`, `gender`, `company`) and uploaded files (`request.FILES.get('image')`), creating the Django `User` and `Recruiter` records inside a `try-except` block and rendering `recruiter_signup.html`.
 - **URL Routing & Local Verification (`urls.py`):** Configured `path('recruiter_signup/', views.recruiter_signup, name='recruiter_signup')` and verified the rendered `localhost:8000/recruiter_login` and `localhost:8000/recruiter_signup` pages on the local development server.
 
+## 📝 Today's Progress (Day 18)
+- **Recruiter Home Template (`recruiter_home.html`):** Created the recruiter dashboard template using `{% load static %}`, `{% block body %}`, `{% include 'user_navigation.html' %}`, and `{% endblock %}` to structure the authenticated recruiter view.
+- **Pending Status Alert (`recruiter_login.html`):** Added conditional template alert handling (`error == "not"` / pending status) rendering `<script>alert("Your Login Status is Pending");</script>` inside the template block.
+- **Admin Model Registration (`admin.py`):** Registered the recruiter user model in Django admin using `admin.site.register(recruiter_user)` so recruiter accounts and approval status can be managed from the admin panel.
+- **Recruiter Home & Login Views (`views.py`):** Implemented `recruiter_home` with `request.user.is_authenticated` check (redirecting unauthenticated users to `recruiter-login` and rendering the recruiter home template), and updated `recruiter_login` to authenticate credentials, verify `user1.type == 'recruiter'` and `user1.status != 'pending'`, log in approved users, or set status/error messages (`Not accepted` / `Invalid user`).
+- **End-to-End Flow Verification:** Tested recruiter signup (`localhost:8000/recruiter_signup`) showing `"Signup Successful"`, followed by recruiter login (`localhost:8000/recruiter_login`) displaying `"Your Login Status is Pending"` for unapproved accounts.
+
 
 
 

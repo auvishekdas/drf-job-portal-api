@@ -29,6 +29,7 @@ urlpatterns = [
     path('user_signup', user_signup, name = "user_signup"),
     path('user_home', user_home, name = "user_home"),
     path('recruiter_signup', recruiter_signup, name = "recruiter_signup"),
+    path('admin_home', admin_home, name = "admin_home"),
     path('Logout', Logout, name = "Logout"),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  

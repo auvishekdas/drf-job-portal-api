@@ -4,4 +4,35 @@
 
 {% include 'admin_navigation.html' %}
 
+<marquee style="font-family: 'Monotype Corsiva' ; font-size: 25px ; color: darksalmon ; background-color: chocolate ; font-weight: bold ; margin-top: 1%;">
+    View Candidate Users
+</marquee>
+
+<table class="table table-hover container">
+    <thead>
+    <tr style = "background-color:darkgoldenrod ; color: cyan">
+        <th>S.No.</th>
+        <th>Full Name</th>
+        <th>Email ID</th> 
+        <th>Contact</th>
+        <th>Gender</th>
+        <th>Image</th> 
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for i in data %}
+    <tr style="background-color:cornflowerblue">
+        <td>{{forloop.counter}}</td>
+        <td>{{i.user.first_name}} {{i.user.last_name}}</td>
+        <td>{{i.user.username}}</td>
+        <td>{{i.mobile}}</td>
+        <td>{{i.gender}}</td>
+        <td><img src="{{i.image.url}}" style="width: 100px; height: 100px; border-radius: 50%"></td>
+        <td>{{forloop.counter}}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
 {% endblock %}

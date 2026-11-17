@@ -114,7 +114,7 @@ def user_signup(request):
         i = request.FILES.get('img')
         p = request.POST.get('pwd')
         e = request.POST.get('email')
-        c = request.POST.get('contact')
+        c = request.POST.get('mobile')
         g = request.POST.get('gender')
         try:
             user = User.objects.create_user(first_name=f, last_name=l,username=e,password=p)
@@ -124,3 +124,10 @@ def user_signup(request):
             error="yes"
     d = {'error':error}   
     return render(request, 'user_signup.html',d)
+
+def view_users(request):
+    if not request.user.is_authenticated:
+        return redirect('admin_login')
+    data = CandidateUser.objects.all()
+    d = {'data':data}
+    return render(request,'view_users.html',d)

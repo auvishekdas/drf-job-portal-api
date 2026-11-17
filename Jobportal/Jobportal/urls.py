@@ -31,5 +31,6 @@ urlpatterns = [
     path('recruiter_signup', recruiter_signup, name = "recruiter_signup"),
     path('admin_home', admin_home, name = "admin_home"),
     path('Logout', Logout, name = "Logout"),
+    path('view_users', view_users, name = "view_users"),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  

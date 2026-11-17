@@ -130,6 +130,13 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Admin Authentication & Routing (`views.py`, `urls.py`):** Configured the `admin_home` URL route and implemented `admin_login` with `authenticate()`, `user.is_staff` check, and `login()` session handling.
 - **End-to-End Verification:** Verified admin login at `localhost:8000/admin_login` (`"Login Successful"`) and redirection to `localhost:8000/admin_home`.
 
+## 📝 Today's Progress (Day 20)
+- **Admin Navigation Link (`admin_navigation.html`):** Linked the `View Users` menu item to `{% url 'view_users' %}` for direct navigation from the admin panel.
+- **View Users Routing & Authentication (`urls.py`, `views.py`):** Configured the `view_users` route and implemented `view_users` with `request.user.is_authenticated` check and `CandidateUser.objects.all()` data query.
+- **Candidate Users Table (`view_users.html`):** Rendered candidate records in a table layout (`S.No.`, `Full Name`, `Email ID`, `Contact`, `Gender`, `Image`, `Action`) using `{% for i in data %}`.
+- **Signup & Model Field Alignment (`user_signup.html`, `views.py`, `models.py`):** Standardized `mobile` field naming across signup input, view creation (`CandidateUser.objects.create`), and model definition so candidate contact numbers render accurately.
+- **End-to-End Verification:** Logged in via `admin_login`, navigated to `view_users`, and verified candidate user rows including contact numbers display properly.
+
 
 
 

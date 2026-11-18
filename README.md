@@ -137,6 +137,12 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Signup & Model Field Alignment (`user_signup.html`, `views.py`, `models.py`):** Standardized `mobile` field naming across signup input, view creation (`CandidateUser.objects.create`), and model definition so candidate contact numbers render accurately.
 - **End-to-End Verification:** Logged in via `admin_login`, navigated to `view_users`, and verified candidate user rows including contact numbers display properly.
 
+## 📝 Today's Progress (Day 21)
+- **DataTables Export Integration (`view_users.html`):** Integrated DataTables buttons (Copy, Excel, CSV, PDF) and layout structure into the candidate users view.
+- **CDN & Script Sequencing (`view_users.html`):** Properly ordered DataTables CSS, JS, export extension libraries (`jszip`, `pdfmake`), and initialization script (`new DataTable('#example', ...)`) after the table element.
+- **Table Interactivity & UI:** Enabled live search, pagination, and file export functionalities on the `id="example"` candidate table.
+- **End-to-End Verification:** Verified that the export buttons, search bar, and data rows render and function correctly on the `view_users` page.
+
 
 
 

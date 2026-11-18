@@ -4,11 +4,16 @@
 
 {% include 'admin_navigation.html' %}
 
+<!-- DataTables CSS and Buttons CSS CDN Links -->
+<link rel="stylesheet" href="https://cdn.datatables.net/3.1.5/css/dataTables.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/4.1.3/css/buttons.dataTables.min.css">
+
 <marquee style="font-family: 'Monotype Corsiva' ; font-size: 25px ; color: darksalmon ; background-color: chocolate ; font-weight: bold ; margin-top: 1%;">
     View Candidate Users
 </marquee>
 
-<table class="table table-hover container">
+<div class="container">
+<table class="table table-hover" id="example">
     <thead>
     <tr style = "background-color:darkgoldenrod ; color: cyan">
         <th>S.No.</th>
@@ -34,5 +39,25 @@
     {% endfor %}
     </tbody>
 </table>
+</div>
+
+<!-- DataTables JS and Buttons JS CDN Links -->
+<script src="https://cdn.datatables.net/3.1.5/js/dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/4.1.3/js/dataTables.buttons.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/4.1.3/js/buttons.dataTables.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfmake@0.3.11/build/pdfmake.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/pdfmake@0.3.11/build/vfs_fonts.js"></script>
+
+<!-- DataTable Initialization Script -->
+<script>
+    new DataTable('#example', {
+        layout: {
+            topStart: {
+                buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5', 'pdfHtml5']
+            }
+        }
+    });
+</script>
 
 {% endblock %}

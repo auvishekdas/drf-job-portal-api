@@ -32,5 +32,6 @@ urlpatterns = [
     path('admin_home', admin_home, name = "admin_home"),
     path('Logout', Logout, name = "Logout"),
     path('view_users', view_users, name = "view_users"),
+    path('delete_user/<int:pid>', delete_user, name = "delete_user"),
 
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  

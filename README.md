@@ -143,6 +143,12 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Table Interactivity & UI:** Enabled live search, pagination, and file export functionalities on the `id="example"` candidate table.
 - **End-to-End Verification:** Verified that the export buttons, search bar, and data rows render and function correctly on the `view_users` page.
 
+## 📝 Today's Progress (Day 22)
+- **Delete Action Link (`view_users.html`):** Added a delete link (`{% url 'delete_user' i.id %}`) in the `Action` column for each candidate user row.
+- **Delete Route & View (`urls.py`, `views.py`):** Configured `path('delete_user/<int:pid>/', delete_user, name="delete_user")` and implemented `delete_user(request, pid)` with authentication check (`request.user.is_authenticated`), `CandidateUser.objects.get(id=pid)`, `.delete()`, and redirect to `view_users`.
+- **Table Row Styling (`view_users.html`):** Updated table row styling (`background-color: cornflowerblue; color: ghostwhite`) so user records appear clearly.
+- **End-to-End Verification:** Tested deleting a candidate user from `view_users` and confirmed the record is removed and the table updates cleanly.
+
 
 
 

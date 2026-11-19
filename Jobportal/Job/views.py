@@ -131,3 +131,10 @@ def view_users(request):
     data = CandidateUser.objects.all()
     d = {'data':data}
     return render(request,'view_users.html',d)
+
+def delete_user(request,pid):
+    if not request.user.is_authenticated:
+        return redirect('admin_login')
+    candidate = CandidateUser.objects.get(id=pid)
+    candidate.delete()
+    return redirect('view_users')

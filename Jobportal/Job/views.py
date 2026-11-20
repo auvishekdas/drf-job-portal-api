@@ -75,12 +75,12 @@ def recruiter_signup(request):
         i = request.FILES.get('img')
         p = request.POST.get('pwd')
         e = request.POST.get('email')
-        c = request.POST.get('contact')
+        c = request.POST.get('mobile')
         g = request.POST.get('gender')
-        c = request.POST.get('company')
+        cp = request.POST.get('company')
         try:
             user = User.objects.create_user(first_name=f, last_name=l,username=e,password=p)
-            RecruiterUser.objects.create(user=user,mobile=c,image=i,gender=g,company=c, type="recruiter",status="pending")
+            RecruiterUser.objects.create(user=user,mobile=c,image=i,gender=g,company=cp, type="recruiter",status="pending")
             error="no"
         except:
             error="yes"
@@ -138,3 +138,11 @@ def delete_user(request,pid):
     candidate = CandidateUser.objects.get(id=pid)
     candidate.delete()
     return redirect('view_users')
+
+def recruiter_pending(request):
+    if not request.user.is_authenticated:
+        return redirect('admin_login')
+    data = RecruiterUser.objects.filter(status='pending')
+    d = {'data':data}
+    return render(request,'recruiter_pending.html',d)
+

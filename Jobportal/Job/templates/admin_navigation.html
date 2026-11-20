@@ -148,18 +148,17 @@ white-space: nowrap;
     </li>
 
 
-    <li class="nav-item">
+    <li class="nav-item dropdown">
 
-        <a class="nav-link" href="#" ><i class="fa fa-users mr-1"></i>New_Recruiter_Request</a>
-
+        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-users mr-1"></i>Recruiters</a>
+    <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'recruiter_pending' %}">Pending</a>
+        <a class="dropdown-item" href="#">Accepted</a>
+        <a class="dropdown-item" href="#">Rejected</a>
+        <a class="dropdown-item" href="#">All Recruiter</a>
+    </div>
     </li>
 
-
-    <li class="nav-item">
-
-        <a class="nav-link" href="#" ><i class="fa fa-users mr-0"></i>View Recruiters</a>
-
-    </li>
 
 
     <li class="nav-item">

@@ -146,3 +146,10 @@ def recruiter_pending(request):
     d = {'data':data}
     return render(request,'recruiter_pending.html',d)
 
+def delete_recruiter(request,pid):
+    if not request.user.is_authenticated:
+        return redirect('admin_login')
+    recruiter = RecruiterUser.objects.get(id=pid)
+    recruiter.delete()
+    return redirect('recruiter_pending')
+

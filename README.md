@@ -149,6 +149,13 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Table Row Styling (`view_users.html`):** Updated table row styling (`background-color: cornflowerblue; color: ghostwhite`) so user records appear clearly.
 - **End-to-End Verification:** Tested deleting a candidate user from `view_users` and confirmed the record is removed and the table updates cleanly.
 
+## 📝 Today's Progress (Day 23)
+- **Delete Confirmation (`view_users.html`):** Added a confirmation prompt (`Are You Agree?`) before executing user deletion to prevent accidental removals.
+- **Recruiters Dropdown & Pending Route (`admin_navigation.html`, `urls.py`, `views.py`):** Added a `Recruiters` dropdown menu (`Pending`, `Accepted`, `Rejected`, `All Recruiter`), configured the `recruiter_pending` route and view filtering `RecruiterUser` records with `status='pending'`, and fixed template tag syntax and browser cache issues that caused a 404 error.
+- **Pending Recruiters Table (`recruiter_pending.html`):** Built the pending recruiters table layout with fields including serial number, full name, email ID, contact, gender, company, image, and action.
+- **Field & Variable Mapping Fix (`views.py`):** Resolved a duplicate variable name (`c`) in `recruiter_signup` where `company` was overwriting `mobile`, ensuring contact numbers and company names store separately.
+- **Recruiter Delete Workflow (`views.py`, `urls.py`, `recruiter_pending.html`):** Added `delete_recruiter(request, pid)` and `delete_recruiter/<int:pid>/` using `RecruiterUser` so recruiter deletions no longer trigger `CandidateUser` `DoesNotExist` errors.
+
 
 
 

@@ -156,6 +156,11 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Field & Variable Mapping Fix (`views.py`):** Resolved a duplicate variable name (`c`) in `recruiter_signup` where `company` was overwriting `mobile`, ensuring contact numbers and company names store separately.
 - **Recruiter Delete Workflow (`views.py`, `urls.py`, `recruiter_pending.html`):** Added `delete_recruiter(request, pid)` and `delete_recruiter/<int:pid>/` using `RecruiterUser` so recruiter deletions no longer trigger `CandidateUser` `DoesNotExist` errors.
 
+## 📝 Today's Progress (Day 24)
+- **Status Column & Display (`recruiter_pending.html`):** Added the `Status` column header (`<th>Status</th>`) and bound `{{i.status}}` inside the table row so pending recruiter status displays clearly.
+- **End-to-End Verification:** Ran the application and confirmed that recruiter records in the pending recruiters table properly display the `pending` status.
+
+
 
 
 

@@ -1,0 +1,42 @@
+{% load static %}
+
+{% block body %}
+
+{% include 'admin_navigation.html' %}
+
+<!-- DataTables CSS and Buttons CSS CDN Links -->
+<link rel="stylesheet" href="https://cdn.datatables.net/3.1.5/css/dataTables.dataTables.min.css">
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/4.1.3/css/buttons.dataTables.min.css">
+
+<marquee style="font-family: 'Monotype Corsiva' ; font-size: 25px ; color: darksalmon ; background-color: chocolate ; font-weight: bold ; margin-top: 1%;">
+    View Recruiter - Pending
+</marquee>
+
+<form class="container mt-5" method = "Post"> 
+    {% csrf_token %}
+    <label><b>Recruiter Name</b></label>
+    <input type="text" class="form-control" name="uname" value="{{recruiter.user.first_name}} {{recruiter.user.last_name}}">
+
+    <label><b>Status</b></label>
+    <select class="form-control" name="status">
+        <option value="Accept">Accept</option>
+        <option value="Reject">Reject</option>
+    </select>
+
+    <input type="submit" class="btn btn-primary" style="margin-top:2% ; color: coral ; background-color: darkslategrey; height: 40px ; ">
+</form>
+
+{% if error == "no" %}
+<script>
+    alert("Status Changes");
+    window.location = '{% url "recruiter_pending" %}'
+</script>
+{% endif %}
+
+{% if error == "yes" %}
+<script>
+    alert("Something went wrong");
+</script>
+{% endif %}
+
+{% endblock %}

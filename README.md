@@ -160,6 +160,12 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Status Column & Display (`recruiter_pending.html`):** Added the `Status` column header (`<th>Status</th>`) and bound `{{i.status}}` inside the table row so pending recruiter status displays clearly.
 - **End-to-End Verification:** Ran the application and confirmed that recruiter records in the pending recruiters table properly display the `pending` status.
 
+## 📝 Today's Progress (Day 25)
+- **Change Status Template (`change_status.html`):** Created the status update template with `admin_navigation.html`, recruiter details, status selection (`Accept` / `Reject`), and status-change feedback alerts.
+- **Pending Table Action Link (`recruiter_pending.html`):** Added the `Change Status` action link pointing to `{% url 'change_status' i.id %}` for each pending recruiter row.
+- **URL Route & View (`urls.py` & `views.py`):** Configured `change_status/<int:pid>` in `urls.py` and implemented `change_status(request, pid)` in `views.py` to update and save `RecruiterUser.status` on `POST` requests.
+- **End-to-End Verification:** Tested navigating to `/change_status/<id>`, selecting a status, and confirmed the `"Status Changes"` alert triggers properly.
+
 
 
 

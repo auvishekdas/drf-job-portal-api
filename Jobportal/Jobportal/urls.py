@@ -34,6 +34,6 @@ urlpatterns = [
     path('view_users', view_users, name = "view_users"),
     path('recruiter_pending', recruiter_pending, name = "recruiter_pending"),
     path('delete_user/<int:pid>', delete_user, name = "delete_user"),
-    path('delete_recruiter/<int:pid>', delete_recruiter, name = "delete_recruiter"),
-
+    path('change_status/<int:pid>', change_status, name = "change_status"),
+    
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  

@@ -166,6 +166,13 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **URL Route & View (`urls.py` & `views.py`):** Configured `change_status/<int:pid>` in `urls.py` and implemented `change_status(request, pid)` in `views.py` to update and save `RecruiterUser.status` on `POST` requests.
 - **End-to-End Verification:** Tested navigating to `/change_status/<id>`, selecting a status, and confirmed the `"Status Changes"` alert triggers properly.
 
+## 📝 Today's Progress (Day 26)
+- **Navigation Dropdown (`admin_navigation.html`):** Added links for pending, accepted, rejected, and all recruiters inside the admin navigation dropdown menu .
+- **Status Views (`views.py`):** Implemented views for accepted, rejected, and all recruiters with authentication checks and status filtering (`Accept` / `Reject`) .
+- **URL Routing & Status Templates (`urls.py` & Templates):** Configured URL routes for accepted, rejected, and all recruiters, and set up the corresponding templates along with redirect handling after status updates .
+- **End-to-End Verification:** Tested navigating through the recruiter status pages and confirmed status updates and redirect flow work in the browser .
+
+
 
 
 

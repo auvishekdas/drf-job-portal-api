@@ -153,9 +153,9 @@ white-space: nowrap;
         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown"><i class="fa fa-users mr-1"></i>Recruiters</a>
     <div class="dropdown-menu">
         <a class="dropdown-item" href="{% url 'recruiter_pending' %}">Pending</a>
-        <a class="dropdown-item" href="#">Accepted</a>
-        <a class="dropdown-item" href="#">Rejected</a>
-        <a class="dropdown-item" href="#">All Recruiter</a>
+        <a class="dropdown-item" href="{% url 'recruiter_accepted' %}">Accepted</a>
+        <a class="dropdown-item" href="{% url 'recruiter_rejected' %}">Rejected</a>
+        <a class="dropdown-item" href="{% url 'recruiter_all' %}">All Recruiter</a>
     </div>
     </li>
 

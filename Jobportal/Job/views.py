@@ -142,7 +142,7 @@ def delete_user(request,pid):
 def recruiter_pending(request):
     if not request.user.is_authenticated:
         return redirect('admin_login')
-    data = RecruiterUser.objects.filter(status='pending')
+    data = RecruiterUser.objects.filter(status='Pending')
     d = {'data':data}
     return render(request,'recruiter_pending.html',d)
 
@@ -161,4 +161,31 @@ def change_status(request,pid):
             error="yes"
     d = {'recruiter':recruiter,'error':error}
     return render(request,'change_status.html',d)
+
+def recruiter_accepted(request):
+    if not request.user.is_authenticated:
+        return redirect('admin_login')
+    data = RecruiterUser.objects.filter(status='Accepted')
+    d = {'data':data}
+    return render(request,'recruiter_accepted.html',d)
+
+def recruiter_rejected(request):
+    if not request.user.is_authenticated:
+        return redirect('admin_login')
+    data = RecruiterUser.objects.filter(status='Rejected')
+    d = {'data':data}
+    return render(request,'recruiter_rejected.html',d)
+
+def recruiter_all(request):
+    if not request.user.is_authenticated:
+        return redirect('admin_login')
+    data = RecruiterUser.objects.all()
+    d = {'data':data}
+    return render(request,'recruiter_all.html',d)
+
+
+
+
+
+
 

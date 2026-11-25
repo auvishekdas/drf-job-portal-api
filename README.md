@@ -172,6 +172,12 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **URL Routing & Status Templates (`urls.py` & Templates):** Configured URL routes for accepted, rejected, and all recruiters, and set up the corresponding templates along with redirect handling after status updates .
 - **End-to-End Verification:** Tested navigating through the recruiter status pages and confirmed status updates and redirect flow work in the browser .
 
+## 📝 Today's Progress (Day 27)
+- **Recruiter Table Actions (`recruiter_all.html`):** Consolidated table action buttons into a single column by placing the `Delete` action link (`i.user.id`) cleanly below `Change Status`.
+- **Candidate Delete Link (`view_users.html`):** Updated the candidate user delete action to pass `i.user.id` for deleting the corresponding user account.
+- **Delete Views & URL Routing (`views.py` & `urls.py`):** Added `delete_recruiter(request, pid)` with authentication check and redirect to `recruiter_all`, and configured the `delete_recruiter/<int:pid>` URL route.
+- **End-to-End Verification:** Tested deleting entries from both `/recruiter_all` and `/view_users` in the browser and confirmed the tables update properly after deletion.
+
 
 
 

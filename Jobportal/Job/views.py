@@ -135,9 +135,16 @@ def view_users(request):
 def delete_user(request,pid):
     if not request.user.is_authenticated:
         return redirect('admin_login')
-    candidate = CandidateUser.objects.get(id=pid)
+    candidate = User.objects.get(id=pid)
     candidate.delete()
     return redirect('view_users')
+
+def delete_recruiter(request,pid):
+    if not request.user.is_authenticated:
+        return redirect('admin_login')
+    recruiter = User.objects.get(id=pid)
+    recruiter.delete()
+    return redirect('recruiter_all')
 
 def recruiter_pending(request):
     if not request.user.is_authenticated:

@@ -169,6 +169,26 @@ def change_status(request,pid):
     d = {'recruiter':recruiter,'error':error}
     return render(request,'change_status.html',d)
 
+def change_passwordadmin(request):
+    if not request.user.is_authenticated:
+        return redirect('admin_login')
+    error=""
+    if request.method=="POST":
+        c = request.POST['currentpassword']
+        n = request.POST['newpassword']
+        try:
+            u = User.objects.get(id=request.user.id)
+            if u.check_password(c):
+                u.set_password(n)
+                u.save()
+                error="no"
+            else:
+                error="not"
+        except:
+            error="yes"
+    d = {'error':error}
+    return render(request,'change_passwordadmin.html',d)
+
 def recruiter_accepted(request):
     if not request.user.is_authenticated:
         return redirect('admin_login')

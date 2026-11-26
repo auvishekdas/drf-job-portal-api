@@ -178,6 +178,13 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 - **Delete Views & URL Routing (`views.py` & `urls.py`):** Added `delete_recruiter(request, pid)` with authentication check and redirect to `recruiter_all`, and configured the `delete_recruiter/<int:pid>` URL route.
 - **End-to-End Verification:** Tested deleting entries from both `/recruiter_all` and `/view_users` in the browser and confirmed the tables update properly after deletion.
 
+## 📝 Today's Progress (Day 28)
+* **Admin Navigation (`admin_navigation.html`):** Added the `Change Password` navigation link inside a `nav-item` (`<li>`) pointing to `{% url 'change_passwordadmin' %}`.
+* **Change Password Template & Client Validation (`change_passwordadmin.html`):** Included `admin_navigation.html`, created the password change form (`currentpassword`, `newpassword`, `confirmpassword`), implemented `checkpass()` JavaScript validation, and handled status/error alerts (`no`, `yes`, `not`) along with logout redirect on success.
+* **View & URL Routing (`views.py` & `urls.py`):** Implemented `change_passwordadmin(request)` with authentication check, current password verification (`check_password`), new password update (`set_password` and `save`), and mapped the `/change_passwordadmin` URL route.
+* **Bug Fix & End-to-End Verification:** Resolved an issue where mismatched passwords still allowed changes due to a field name mismatch (`confirmpassword` in JavaScript vs `confirmnewpassword` on the input element), then verified wrong current password, mismatched new/confirm password, and successful password update flows in the browser.
+
+
 
 
 

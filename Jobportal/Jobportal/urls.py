@@ -28,6 +28,7 @@ urlpatterns = [
     path('recruiter_login', recruiter_login, name = "recruiter_login"),
     path('user_signup', user_signup, name = "user_signup"),
     path('user_home', user_home, name = "user_home"),
+    path('recruiter_home', recruiter_home, name = "recruiter_home"),
     path('recruiter_signup', recruiter_signup, name = "recruiter_signup"),
     path('admin_home', admin_home, name = "admin_home"),
     path('Logout', Logout, name = "Logout"),
@@ -40,5 +41,7 @@ urlpatterns = [
     path('recruiter_all', recruiter_all, name = "recruiter_all"),
     path('delete_recruiter/<int:pid>', delete_recruiter, name = "delete_recruiter"),
     path('change_passwordadmin', change_passwordadmin, name = "change_passwordadmin"),
+    path('change_passworduser', change_passworduser, name = "change_passworduser"),
+        
     
 ]+static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)  

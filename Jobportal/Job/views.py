@@ -149,7 +149,7 @@ def delete_recruiter(request,pid):
 def recruiter_pending(request):
     if not request.user.is_authenticated:
         return redirect('admin_login')
-    data = RecruiterUser.objects.filter(status='Pending')
+    data = RecruiterUser.objects.filter(status__iexact='pending')
     d = {'data':data}
     return render(request,'recruiter_pending.html',d)
 
@@ -189,17 +189,37 @@ def change_passwordadmin(request):
     d = {'error':error}
     return render(request,'change_passwordadmin.html',d)
 
+def change_passworduser(request):
+    if not request.user.is_authenticated:
+        return redirect('user_login')
+    error=""
+    if request.method=="POST":
+        c = request.POST['currentpassword']
+        n = request.POST['newpassword']
+        try:
+            u = User.objects.get(id=request.user.id)
+            if u.check_password(c):
+                u.set_password(n)
+                u.save()
+                error="no"
+            else:
+                error="not"
+        except:
+            error="yes"
+    d = {'error':error}
+    return render(request,'change_passworduser.html',d)
+
 def recruiter_accepted(request):
     if not request.user.is_authenticated:
         return redirect('admin_login')
-    data = RecruiterUser.objects.filter(status='Accepted')
+    data = RecruiterUser.objects.filter(status='Accept')
     d = {'data':data}
     return render(request,'recruiter_accepted.html',d)
 
 def recruiter_rejected(request):
     if not request.user.is_authenticated:
         return redirect('admin_login')
-    data = RecruiterUser.objects.filter(status='Rejected')
+    data = RecruiterUser.objects.filter(status='Reject')
     d = {'data':data}
     return render(request,'recruiter_rejected.html',d)
 

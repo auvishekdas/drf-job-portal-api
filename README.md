@@ -184,6 +184,12 @@ Welcome to the **Django Job Portal API** project! This is a modern backend web a
 * **View & URL Routing (`views.py` & `urls.py`):** Implemented `change_passwordadmin(request)` with authentication check, current password verification (`check_password`), new password update (`set_password` and `save`), and mapped the `/change_passwordadmin` URL route.
 * **Bug Fix & End-to-End Verification:** Resolved an issue where mismatched passwords still allowed changes due to a field name mismatch (`confirmpassword` in JavaScript vs `confirmnewpassword` on the input element), then verified wrong current password, mismatched new/confirm password, and successful password update flows in the browser.
 
+## 📝 Today's Progress (Day 29)
+- **User Password Change (`change_passworduser.html` & `user_navigation.html`):** Created the candidate/user password change template including `user_navigation.html` with current/new/confirm password fields, validation feedback, and added the `Change Password` navigation link.
+- **Views & URL Routing (`views.py` & `urls.py`):** Implemented `change_passworduser` with authentication and password verification logic, registered its URL route, and added the missing `recruiter_home` route in `urls.py`.
+- **Recruiter Status Filtering & Case-Sensitivity Fix (`views.py`):** Resolved status mismatches across pending, accepted, and rejected recruiter views and used case-insensitive matching (`status__iexact='pending'`) so pending recruiters display properly without case conflicts.
+- **End-to-End Verification:** Tested user password updates and verified recruiter status filtering across pending, accepted, rejected, and all-recruiter views in the browser.
+
 
 
 
